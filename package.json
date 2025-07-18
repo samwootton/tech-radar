@@ -1,15 +1,12 @@
 {
-  "name": "tech-radar",
+  "name": "aoe-techradar",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "build": "techradar build",
+    "build": "techradar build --strict",
     "serve": "techradar serve"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "aoe_technology_radar": "^4.6.1"
+    "aoe_technology_radar": "^4"
   }
 }
