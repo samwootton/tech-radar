@@ -60,3 +60,5 @@ coverage/
 *.bak
 *.swp
 *~
+
+.techradar
