@@ -2,9 +2,9 @@ name: Build Technology Radar
 
 on:
   push:
-    branches-ignore: [ "main" ]
+    branches: [ "main" ]
   pull_request:
-    branches-ignore: [ "main" ]
+    branches: [ "main" ]
 
 jobs:
   build:
