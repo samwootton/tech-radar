@@ -1,5 +1,5 @@
 ---
 layout: page
-title: LnW i-gaming Tech Radar
+title: Tech Radar
 permalink: /radar/
 ---
