@@ -27,18 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs
-          destination: ./_site
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -49,10 +37,22 @@ jobs:
       - run: npm run build
       # - run: if [ -n "$(git status --porcelain)" ]; then echo 'workspace is dirty after rebuilding' ; git status ; git diff ; exit 1 ; fi
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: copy_dir
         run: |
-            echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
-            cp -R ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/docs/_site/radar
+          echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
+          cp -R ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/docs/_site/radar
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
   deploy_site:
     environment:
