@@ -23,6 +23,7 @@ concurrency:
 
 jobs:
   build_radar:
+    name: build_site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
