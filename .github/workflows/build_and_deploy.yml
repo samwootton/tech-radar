@@ -67,6 +67,7 @@ jobs:
         run: |
           echo $(ls _site)
           sudo chmod -R u+w _site || true
+          mkdir dir _site/radar
           mv build _site/radar
 
       - name: Upload artifact
