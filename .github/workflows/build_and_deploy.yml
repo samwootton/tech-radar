@@ -53,6 +53,10 @@ jobs:
           name: build-folder
           path: build
 
+      - name: Create site
+        run: |
+          mkdir _site
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
