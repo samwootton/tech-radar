@@ -69,7 +69,8 @@ jobs:
       - name: Allow write
         run: |
           echo $(ls)
-          sudo chmod -R u+w _site || true
+          echo {${GITHUB_WORKSPACE}
+          sudo chmod -R u+w ${GITHUB_WORKSPACE}/docs/_site || true
           cp -R build/* _site/radar/
 
       - name: Upload artifact
