@@ -68,6 +68,7 @@ jobs:
       - name: copy_dir
         run: |
           echo $(ls)
+          cp -R build/* _site/radar/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
