@@ -55,8 +55,11 @@ jobs:
 
       - name: Create site
         run: |
+          mkdir tmp_site
+          cp -R _site/radar tmp_site
           mkdir _site
           mkdir _site/radar
+          cp -R tmp_site _site/radar
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
