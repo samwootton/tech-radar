@@ -69,7 +69,7 @@ jobs:
       - name: Allow write
         run: |
           echo $(ls)
-          echo {${GITHUB_WORKSPACE}
+          echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           sudo chmod -R u+w ${GITHUB_WORKSPACE}/docs/_site || true
           cp -R build/* _site/radar/
 
