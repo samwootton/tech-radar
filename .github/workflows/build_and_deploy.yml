@@ -37,11 +37,10 @@ jobs:
       - run: npm run build
       - run: if [ -n "$(git status --porcelain)" ]; then echo 'workspace is dirty after rebuilding' ; git status ; git diff ; exit 1 ; fi
 
-      - name: copy file
-        uses: canastro/copy-file-action@master
-        with:
-          source: "${GITHUB_WORKSPACE}/build"
-          target: "${GITHUB_WORKSPACE}/docs"
+      - name: copy_dir
+        run: |
+            echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
+            cp -R ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/docs
 
   build_site:
     runs-on: ubuntu-latest
