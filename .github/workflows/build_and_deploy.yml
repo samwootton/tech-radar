@@ -37,6 +37,15 @@ jobs:
       - run: npm run build
       - run: if [ -n "$(git status --porcelain)" ]; then echo 'workspace is dirty after rebuilding' ; git status ; git diff ; exit 1 ; fi
 
+  copy_dir:
+    name: Copy Directory
+    runs-on: ubuntu-latest
+    needs: build_radar
+    steps:
+      - name: copy_dir
+        run: |
+          cp -R ./build ./docs
+
   copy_site:
     name: Copy Site
     runs-on: ubuntu-latest
