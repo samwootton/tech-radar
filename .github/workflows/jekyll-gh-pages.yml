@@ -22,6 +22,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: ../build
+          target: ./docs
+
   # Build job
   build:
     runs-on: ubuntu-latest
