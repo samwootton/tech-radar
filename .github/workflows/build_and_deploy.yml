@@ -70,6 +70,7 @@ jobs:
         run: |
           echo $(ls)
           echo $(ls _site)
+          echo $(ls /home/runner/work/tech-radar)
           echo $(pwd)
           echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           echo "github.workspace ${{github.workspace}}"
