@@ -67,6 +67,7 @@ jobs:
 
       - name: copy_dir
         run: |
+          mkdir ./docs/_site/radar
           cp -R ./build/* ./docs/_site/radar/
 
       - name: Upload artifact
