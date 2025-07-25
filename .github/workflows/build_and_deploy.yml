@@ -57,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-folder
-          path: build
+          path: ./build
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
