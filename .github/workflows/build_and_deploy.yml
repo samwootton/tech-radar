@@ -69,6 +69,7 @@ jobs:
       - name: Allow write
         run: |
           echo $(ls)
+          echo $(ls _site)
           echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           echo "github.workspace ${{github.workspace}}"
           echo $(pwd)
