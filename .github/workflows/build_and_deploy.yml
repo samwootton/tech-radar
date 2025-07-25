@@ -68,11 +68,8 @@ jobs:
 
       - name: Allow write
         run: |
-          chmod -R u+w _site || true
-
-      - name: copy_dir
-        run: |
-          echo $(ls -l)
+          echo $(ls)
+          sudo chmod -R u+w _site || true
           cp -R build/* _site/radar/
 
       - name: Upload artifact
