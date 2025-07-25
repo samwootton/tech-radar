@@ -55,11 +55,12 @@ jobs:
 
       - name: Create site
         run: |
-          mkdir tmp_site
-          sudo chmod -R u+w _site || true
-          cp -R _site/radar tmp_site
-        #  mkdir _site
-        #  mkdir _site/radar
+        #  mkdir tmp_site
+        #  sudo chmod -R u+w _site || true
+        #  cp -R _site/radar tmp_site
+          echo $(ls _site)
+          mkdir _site
+          mkdir _site/radar
         #  cp -R tmp_site _site/radar
 
       - name: Build with Jekyll
@@ -71,7 +72,6 @@ jobs:
       - name: Copy & Write
         run: |
           echo $(ls)
-          echo $(ls _site)
           echo "runner.workspace ${{runner.workspace}}"
           echo "github.workspace ${{github.workspace}}"
           sudo chmod -R u+w _site || true
