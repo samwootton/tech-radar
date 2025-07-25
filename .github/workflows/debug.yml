@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: debug
         run: |
-          echo "Current path {{github.path}}"
+          echo "Current path ${{github.path}}"
