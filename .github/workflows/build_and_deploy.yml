@@ -35,6 +35,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - run: if [ -n "$(git status --porcelain)" ]; then echo 'workspace is dirty after rebuilding' ; git status ; git diff ; exit 1 ; fi
 
   copy_dir:
     name: Copy Directory
