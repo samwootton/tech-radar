@@ -43,7 +43,7 @@ jobs:
     steps:
       - name: copy_dir
         run: |
-          cp -R ./build ./docs
+          cp -R ${{RUNNER_TEMP}}/build ${{RUNNER_TEMP}}/docs
 
   build_site:
     runs-on: ubuntu-latest
