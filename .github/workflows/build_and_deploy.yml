@@ -56,8 +56,6 @@ jobs:
       - name: Create site
         run: |
           echo $(ls _site)
-        #  mkdir _site
-        #  mkdir _site/radar
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -68,8 +66,6 @@ jobs:
       - name: Copy Site
         run: |
           echo $(ls _site)
-        #  echo "runner.workspace ${{runner.workspace}}"
-        #  echo "github.workspace ${{github.workspace}}"
           sudo chmod -R u+w _site || true
           mv build _site/radar
 
