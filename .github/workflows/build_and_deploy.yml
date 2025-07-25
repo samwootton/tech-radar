@@ -62,12 +62,12 @@ jobs:
       - name: Copy Site
         run: |
           echo $(ls _site)
+          mkdir _site/radar
+          mv build _site/radar
         #  mkdir tmp_site
         #  cp -R _site/* tmp_site
         #  echo $(ls tmp_site)
         #  sudo chmod -R u+w _site || true
-          mkdir dir _site/radar
-          mv build _site/radar
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
