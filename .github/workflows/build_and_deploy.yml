@@ -52,7 +52,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs
+          source: ${GITHUB_WORKSPACE}/docs
           destination: ./_site
 
   copy_site:
