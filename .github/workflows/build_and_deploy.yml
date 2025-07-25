@@ -43,7 +43,7 @@ jobs:
     steps:
       - name: copy_dir
         run: |
-          echo "Current path {{github.path}}"
+          cp -R ./build ./docs
 
   build_site:
     runs-on: ubuntu-latest
