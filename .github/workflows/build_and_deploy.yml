@@ -70,9 +70,9 @@ jobs:
         run: |
           echo $(ls)
           echo $(ls _site)
+          echo $(pwd)
           echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           echo "github.workspace ${{github.workspace}}"
-          echo $(pwd)
           sudo chmod -R u+w _site || true
           cp -R build/* _site/radar
 
