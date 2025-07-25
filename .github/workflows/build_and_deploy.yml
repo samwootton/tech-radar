@@ -64,10 +64,9 @@ jobs:
           echo $(ls _site)
           mkdir tmp_site
           cp -R _site/* tmp_site
-          mkdir _site
+          mkdir _site/radar
           sudo chmod -R u+w _site || true
           cp -R tmp_site/* _site/
-          mkdir _site/radar
           mv build _site/radar
 
       - name: Upload artifact
