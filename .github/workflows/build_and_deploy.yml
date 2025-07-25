@@ -53,10 +53,6 @@ jobs:
           name: build-folder
           path: build
 
-      - name: Create site
-        run: |
-          echo $(ls _site)
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -66,9 +62,12 @@ jobs:
       - name: Copy Site
         run: |
           echo $(ls _site)
-          sudo chmod -R u+w _site || true
-          mkdir dir _site/radar
-          mv build _site/radar
+          mkdir tmp_site
+          cp -R _site/radar tmp_site
+          echo $(ls tmp_site)
+        #  sudo chmod -R u+w _site || true
+        #  mkdir dir _site/radar
+        #  mv build _site/radar
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
