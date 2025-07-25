@@ -55,9 +55,10 @@ jobs:
 
       - name: Create site
         run: |
+          echo $(ls)
           echo $(ls _site)
-          mkdir _site
-          mkdir _site/radar
+        #  mkdir _site
+        #  mkdir _site/radar
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
