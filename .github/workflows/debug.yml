@@ -1,0 +1,19 @@
+name: debug.yml
+
+on:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  echo_dir:
+    name: Output Directory
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug
+        run: |
+          echo "Current path {{github.path}}"
