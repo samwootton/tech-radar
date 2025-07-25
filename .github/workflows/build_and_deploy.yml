@@ -63,7 +63,7 @@ jobs:
         run: |
           echo $(ls _site)
           mkdir tmp_site
-          cp -R _site tmp_site
+          cp -R _site/* tmp_site
           echo $(ls tmp_site)
         #  sudo chmod -R u+w _site || true
         #  mkdir dir _site/radar
