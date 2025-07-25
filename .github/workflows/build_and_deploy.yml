@@ -55,7 +55,6 @@ jobs:
 
       - name: Create site
         run: |
-          echo $(ls)
           echo $(ls _site)
         #  mkdir _site
         #  mkdir _site/radar
@@ -66,11 +65,11 @@ jobs:
           source: docs
           destination: _site
 
-      - name: Copy & Write
+      - name: Copy Site
         run: |
-          echo $(ls)
-          echo "runner.workspace ${{runner.workspace}}"
-          echo "github.workspace ${{github.workspace}}"
+          echo $(ls _site)
+        #  echo "runner.workspace ${{runner.workspace}}"
+        #  echo "github.workspace ${{github.workspace}}"
           sudo chmod -R u+w _site || true
           mv build _site/radar
 
