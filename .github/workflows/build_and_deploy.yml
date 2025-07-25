@@ -40,7 +40,7 @@ jobs:
       - name: copy_dir
         run: |
             echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
-            cp -R ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/docs
+            cp -R ${GITHUB_WORKSPACE}/build ${GITHUB_WORKSPACE}/docs/_site/radar
 
   build_site:
     runs-on: ubuntu-latest
