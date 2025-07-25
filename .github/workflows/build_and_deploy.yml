@@ -72,7 +72,7 @@ jobs:
           echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           echo $(pwd)
           sudo chmod -R u+w ${GITHUB_WORKSPACE}/docs/_site || true
-          cp -R build/* _site/radar/
+          cp -R build/* ${GITHUB_WORKSPACE}/docs/_site/radar/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
