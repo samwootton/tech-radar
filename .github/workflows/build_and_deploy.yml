@@ -43,7 +43,8 @@ jobs:
     steps:
       - name: copy_dir
         run: |
-          cp -R ${{GITHUB_WORKSPACE}}/build ${{GITHUB_WORKSPACE}}/docs
+          echo "GITHUB_WORKSPACE ${{GITHUB_WORKSPACE}}"
+        #  cp -R ${{GITHUB_WORKSPACE}}/build ${{GITHUB_WORKSPACE}}/docs
 
   build_site:
     runs-on: ubuntu-latest
