@@ -52,6 +52,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Copy radar
+        uses: actions/download-artifact@v4
+        with:
+          name: build-folder
+          path: docs
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -60,21 +66,6 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-
-  copy_site:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: copy-site
-        uses: actions/download-artifact@v4
-        with:
-          name: build-folder
-          path: build
-
-      - name: Copy build to docs
-        run: cp -R build docs
 
   deploy_site:
     environment:
