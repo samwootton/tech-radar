@@ -71,8 +71,8 @@ jobs:
           echo $(ls)
           echo "GITHUB_WORKSPACE ${GITHUB_WORKSPACE}"
           echo $(pwd)
-          sudo chmod -R u+w /home/runner/work/tech-radar/docs/_site || true
-          cp -R build/* /home/runner/work/tech-radar/docs/_site/radar/
+          sudo chmod -R u+w _site || true
+          cp -R build/* _site/radar
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
