@@ -66,6 +66,9 @@ jobs:
           source: docs
           destination: _site
 
+      - name: Allow write
+        run: chmod -R u+w _site/radar/ || true
+
       - name: copy_dir
         run: |
           echo $(ls -l)
