@@ -36,15 +36,6 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-  copy_dir:
-    name: Copy Directory
-    runs-on: ubuntu-latest
-    needs: build_radar
-    steps:
-      - name: copy_dir
-        run: |
-          cp -R ${{RUNNER_TEMP}}/build ${{RUNNER_TEMP}}/docs
-
   build_site:
     runs-on: ubuntu-latest
     steps:
