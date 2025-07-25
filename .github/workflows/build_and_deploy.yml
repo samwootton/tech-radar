@@ -67,7 +67,7 @@ jobs:
           destination: _site
 
       - name: Allow write
-        run: chmod -R u+w _site || true
+        run: sudo chmod -R u+w _site || true
 
       - name: copy_dir
         run: |
