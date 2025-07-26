@@ -47,12 +47,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Copy radar
-        uses: actions/download-artifact@v4
-        with:
-          name: build-folder
-          path: build
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -62,12 +56,6 @@ jobs:
       - name: Copy Site
         run: |
           echo $(ls _site)
-          mkdir tmp_site
-          cp -R _site/* tmp_site
-          mkdir _site/radar
-          sudo chmod -R u+w _site || true
-          cp -R tmp_site/* _site/
-          mv build _site/radar
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
