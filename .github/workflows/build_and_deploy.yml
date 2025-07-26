@@ -51,6 +51,7 @@ jobs:
         run: |
           mkdir _site
           mkdir _site/radar
+          sudo chmod -R u+w _site || true
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
