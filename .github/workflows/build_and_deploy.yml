@@ -62,6 +62,7 @@ jobs:
       - name: Copy Site
         run: |
           mkdir _site/radar
+          sudo chmod -R u+w _site || true
           mv build/* _site/radar/
           echo "ls $(ls)"
           echo "ls _site  $(ls _site)"
