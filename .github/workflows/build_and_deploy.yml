@@ -59,6 +59,7 @@ jobs:
 
       - name: Copy Site
         run: |
+          mv build _site/
           echo "ls $(ls)"
           echo "ls _site  $(ls _site)"
 
