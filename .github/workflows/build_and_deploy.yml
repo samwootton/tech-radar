@@ -55,8 +55,8 @@ jobs:
 
       - name: Copy Site
         run: |
-          echo $(ls)
-          echo $(ls _site)
+          echo "ls $(ls)"
+          echo "ls _site  $(ls _site)"
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
